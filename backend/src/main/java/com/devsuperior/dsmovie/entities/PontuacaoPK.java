@@ -16,7 +16,7 @@ public class PontuacaoPK implements Serializable{
 	private Movie movie;
 	
 	@ManyToOne
-	@JoinColumn(name= "Usuario_id")
+	@JoinColumn(name= "usuario_id")
 	private Usuario usuario;
 	
 	public PontuacaoPK() {
