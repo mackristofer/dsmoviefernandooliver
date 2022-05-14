@@ -12,9 +12,9 @@ import com.devsuperior.dsmovie.dto.MovieDTO;
 import com.devsuperior.dsmovie.services.MovieService;
 
 @RestController
-@RequestMapping(value ="/movies")
+@RequestMapping(value = "/movies")
 public class MovieController {
-
+	
 	@Autowired
 	private MovieService service;
 	
@@ -24,7 +24,7 @@ public class MovieController {
 	}
 	
 	@GetMapping(value = "/{id}")
-	public MovieDTO findById(@PathVariable long id){
+	public MovieDTO findById(@PathVariable Long id){
 		return service.findById(id);
 	}
 }
