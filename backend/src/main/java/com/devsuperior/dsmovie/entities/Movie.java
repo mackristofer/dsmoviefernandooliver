@@ -17,22 +17,23 @@ public class Movie {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String titulo;
-	private Double nota;
-	private Integer avaliacao;
-	private String imagem;
+	private String title;
+	private Double score;
+	private Integer count;
+	private String image;
 	
 	@OneToMany(mappedBy = "id.movie")
-	private Set<Pontuacao> pontuacoes = new HashSet<>();
+	private Set<Score> scores = new HashSet<>();
 	
-	public Movie() {}
+	public Movie() {
+	}
 
-	public Movie(Long id, String titulo, Double nota, Integer avaliacao, String imagem) {
+	public Movie(Long id, String title, Double score, Integer count, String image) {
 		this.id = id;
-		this.titulo = titulo;
-		this.nota = nota;
-		this.avaliacao = avaliacao;
-		this.imagem = imagem;
+		this.title = title;
+		this.score = score;
+		this.count = count;
+		this.image = image;
 	}
 
 	public Long getId() {
@@ -43,41 +44,40 @@ public class Movie {
 		this.id = id;
 	}
 
-	public String getTitulo() {
-		return titulo;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public Double getNota() {
-		return nota;
+	public Double getScore() {
+		return score;
 	}
 
-	public void setNota(Double nota) {
-		this.nota = nota;
+	public void setScore(Double score) {
+		this.score = score;
 	}
 
-	public Integer getAvaliacao() {
-		return avaliacao;
+	public Integer getCount() {
+		return count;
 	}
 
-	public void setAvaliacao(Integer avaliacao) {
-		this.avaliacao = avaliacao;
+	public void setCount(Integer count) {
+		this.count = count;
 	}
 
-	public String getImagem() {
-		return imagem;
+	public String getImage() {
+		return image;
 	}
 
-	public void setImagem(String imagem) {
-		this.imagem = imagem;
+	public void setImage(String image) {
+		this.image = image;
 	}
 
-	public Set<Pontuacao> getPontuacoes() {
-		return pontuacoes;
+	public Set<Score> getScores() {
+		return scores;
 	}
-	
 	
 }
